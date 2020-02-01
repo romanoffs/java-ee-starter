@@ -13,7 +13,18 @@ This template was made in order to quickly begin work on the project in the `Jav
 ##### Test with Wildfly 18.0.1.Final (https://wildfly.org/)
 ##### Maven packaging (https://maven.apache.org/)
 #
-## Sources
+### Usage
+```
+git clone https://github.com/romanoffs/java-ee-starter.git
+```
+### TODO
+<ul>
+    <li>Add JWT Tokens</li>
+    <li>Write tests</li>
+</ul>
+
+##
+### Sources
 https://github.com/kedar-joshi/Thymeleaf-JavaEE-MVC
 <br>
 https://www.mvc-spec.org/spec/latest/index.html
@@ -29,3 +40,5 @@ https://github.com/AdrianCitu/GenericCSRFFilter
 https://adriancitu.com/2017/01/16/a-java-implementation-of-csrf-mitigation-using-double-submit-cookie-pattern/
 <br>
 https://developer.ibm.com/series/get-started-with-the-java-ee-8-security-api/
+### License
+[MIT](https://choosealicense.com/licenses/mit/)
