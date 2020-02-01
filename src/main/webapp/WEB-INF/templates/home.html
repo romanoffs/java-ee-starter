@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+HOME
+
+<a href="/auth/logout">
+    <button>Logout</button>
+</a>
+
+<form action="/home" method="post">
+    <input type="submit" value="Click here"/>
+    <label>
+        <span>Email</span>
+        <input type="text" name="email"/>
+    </label>
+</form>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    function getCookie(name) {
+        let matches = document.cookie.match(new RegExp(
+            "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+        ));
+        return matches ? decodeURIComponent(matches[1]) : undefined;
+    }
+
+    $(() => {
+        const $form = $("form[action='/home']");
+        $form.on("submit", e => {
+            e.preventDefault();
+            $.ajax({
+                method: 'POST',
+                url: '/home',
+                headers: {
+                    'TEVIS-TOKEN': getCookie("X-TEVIS-TOKEN"),
+                },
+                data: $form.serialize(),
+                success: (data) => {
+                    console.log(data);
+                },
+                error: (error) => console.log(error)
+            })
+        })
+    })
+</script>
+</body>
+</html>

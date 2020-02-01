@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+INDEX
+<p th:text="${authUser.name}"></p>
+<h3>Date now: <span th:text="${#dates.createNow().toString()}"></span></h3>
+<p th:text="${message}"></p>
+<form action="csrf" method="post" accept-charset="utf-8">
+    <input type="submit" value="Click here"/>
+    <input type="hidden" value="0" name="0"/>
+<!--    <input type="hidden" th:name="${mvc.csrf.name}"-->
+<!--           th:value="${mvc.csrf.token}"/>-->
+</form>
+</body>
+</html>

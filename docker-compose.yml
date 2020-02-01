@@ -1,0 +1,5 @@
+version: "3.7"
+services:
+  app:
+    image: tomee/11-jre-8.0.0-M3-plus
+    container_name: app
